@@ -1,0 +1,23 @@
+{
+  "name": "pull-request-restriction",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Damm DevOps - Gitflow Pull Request restriction",
+  "main": "main.js",
+  "keywords": [
+    "github action"
+  ],
+  "scripts": {
+    "build": "ncc build main.js --license licenses.txt"
+  },
+  "author": "Damm DevOps",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.7",
+    "@actions/github": "^4.0.0",
+    "eslint": "^7.26.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.28.5"
+  }
+}

@@ -1,0 +1,14 @@
+name: 'Damm DevOps - Gitflow Pull Request restriction'
+description: 'Gitflow Pull Request restriction'
+
+outputs:
+  pull-request-allowed:
+    description: 'Boolean output indicating if the target and source branch is allowed.'
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'git-pull-request'
+  color: 'orange'
