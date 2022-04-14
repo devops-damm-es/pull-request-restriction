@@ -22,11 +22,13 @@ import { GitEventRepositoryService } from "../Infrastructure/Core/Impl/GitEventR
 import { IActionResultWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/IActionResultWrapperRepositoryService";
 import { IGitDefaultBranchNameWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/IGitDefaultBranchNameWrapperRepositoryService";
 import { IGitEventWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/IGitEventWrapperRepositoryService";
+import { IGitPullRequestEventWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/IGitPullRequestEventWrapperRepositoryService";
 import { IGitSourceBranchNameWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/IGitSourceBranchNameWrapperRepositoryService";
 import { IGitTargetBranchNameWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/IGitTargetBranchNameWrapperRepositoryService";
 import { ActionResultWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/Impl/ActionResultWrapperRepositoryService";
 import { GitDefaultBranchNameWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/Impl/GitDefaultBranchNameWrapperRepositoryService";
 import { GitEventWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/Impl/GitEventWrapperRepositoryService";
+import { GitPullRequestEventWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/Impl/GitPullRequestEventWrapperRepositoryService";
 import { GitSourceBranchNameWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/Impl/GitSourceBranchNameWrapperRepositoryService";
 import { GitTargetBranchNameWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/Impl/GitTargetBranchNameWrapperRepositoryService";
 
@@ -54,6 +56,7 @@ export class IoCContainer {
         Container.bind(IActionResultWrapperRepositoryService).to(ActionResultWrapperRepositoryService);
         Container.bind(IGitDefaultBranchNameWrapperRepositoryService).to(GitDefaultBranchNameWrapperRepositoryService);
         Container.bind(IGitEventWrapperRepositoryService).to(GitEventWrapperRepositoryService);
+        Container.bind(IGitPullRequestEventWrapperRepositoryService).to(GitPullRequestEventWrapperRepositoryService);
         Container.bind(IGitSourceBranchNameWrapperRepositoryService).to(GitSourceBranchNameWrapperRepositoryService);
         Container.bind(IGitTargetBranchNameWrapperRepositoryService).to(GitTargetBranchNameWrapperRepositoryService);
     }

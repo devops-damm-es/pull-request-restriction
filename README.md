@@ -10,7 +10,9 @@ This action allow:
 
 ```yaml
 name: 'Damm DevOps - Gitflow pull request restriction'
-on: push
+on: 
+  pull_request:
+    types: [opened, edited, reopened]
 jobs:
   build:
     runs-on: ubuntu-latest

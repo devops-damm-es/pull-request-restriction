@@ -25,11 +25,13 @@ const GitEventRepositoryService_1 = require("../Infrastructure/Core/Impl/GitEven
 const IActionResultWrapperRepositoryService_1 = require("../Infrastructure/Core/Wrapper/IActionResultWrapperRepositoryService");
 const IGitDefaultBranchNameWrapperRepositoryService_1 = require("../Infrastructure/Core/Wrapper/IGitDefaultBranchNameWrapperRepositoryService");
 const IGitEventWrapperRepositoryService_1 = require("../Infrastructure/Core/Wrapper/IGitEventWrapperRepositoryService");
+const IGitPullRequestEventWrapperRepositoryService_1 = require("../Infrastructure/Core/Wrapper/IGitPullRequestEventWrapperRepositoryService");
 const IGitSourceBranchNameWrapperRepositoryService_1 = require("../Infrastructure/Core/Wrapper/IGitSourceBranchNameWrapperRepositoryService");
 const IGitTargetBranchNameWrapperRepositoryService_1 = require("../Infrastructure/Core/Wrapper/IGitTargetBranchNameWrapperRepositoryService");
 const ActionResultWrapperRepositoryService_1 = require("../Infrastructure/Core/Wrapper/Impl/ActionResultWrapperRepositoryService");
 const GitDefaultBranchNameWrapperRepositoryService_1 = require("../Infrastructure/Core/Wrapper/Impl/GitDefaultBranchNameWrapperRepositoryService");
 const GitEventWrapperRepositoryService_1 = require("../Infrastructure/Core/Wrapper/Impl/GitEventWrapperRepositoryService");
+const GitPullRequestEventWrapperRepositoryService_1 = require("../Infrastructure/Core/Wrapper/Impl/GitPullRequestEventWrapperRepositoryService");
 const GitSourceBranchNameWrapperRepositoryService_1 = require("../Infrastructure/Core/Wrapper/Impl/GitSourceBranchNameWrapperRepositoryService");
 const GitTargetBranchNameWrapperRepositoryService_1 = require("../Infrastructure/Core/Wrapper/Impl/GitTargetBranchNameWrapperRepositoryService");
 class IoCContainer {
@@ -50,6 +52,7 @@ class IoCContainer {
         typescript_ioc_1.Container.bind(IActionResultWrapperRepositoryService_1.IActionResultWrapperRepositoryService).to(ActionResultWrapperRepositoryService_1.ActionResultWrapperRepositoryService);
         typescript_ioc_1.Container.bind(IGitDefaultBranchNameWrapperRepositoryService_1.IGitDefaultBranchNameWrapperRepositoryService).to(GitDefaultBranchNameWrapperRepositoryService_1.GitDefaultBranchNameWrapperRepositoryService);
         typescript_ioc_1.Container.bind(IGitEventWrapperRepositoryService_1.IGitEventWrapperRepositoryService).to(GitEventWrapperRepositoryService_1.GitEventWrapperRepositoryService);
+        typescript_ioc_1.Container.bind(IGitPullRequestEventWrapperRepositoryService_1.IGitPullRequestEventWrapperRepositoryService).to(GitPullRequestEventWrapperRepositoryService_1.GitPullRequestEventWrapperRepositoryService);
         typescript_ioc_1.Container.bind(IGitSourceBranchNameWrapperRepositoryService_1.IGitSourceBranchNameWrapperRepositoryService).to(GitSourceBranchNameWrapperRepositoryService_1.GitSourceBranchNameWrapperRepositoryService);
         typescript_ioc_1.Container.bind(IGitTargetBranchNameWrapperRepositoryService_1.IGitTargetBranchNameWrapperRepositoryService).to(GitTargetBranchNameWrapperRepositoryService_1.GitTargetBranchNameWrapperRepositoryService);
     }

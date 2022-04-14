@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Container_1 = require("./Crosscutting/Container");
+const IGitPullRequestEventWrapperRepositoryService_1 = require("./Infrastructure/Core/Wrapper/IGitPullRequestEventWrapperRepositoryService");
 const IGitSourceBranchNameWrapperRepositoryService_1 = require("./Infrastructure/Core/Wrapper/IGitSourceBranchNameWrapperRepositoryService");
 const IGitTargetBranchNameWrapperRepositoryService_1 = require("./Infrastructure/Core/Wrapper/IGitTargetBranchNameWrapperRepositoryService");
 var gitSourceBranchNameWrapperRepositoryService = Container_1.IoCContainer.resolve(IGitSourceBranchNameWrapperRepositoryService_1.IGitSourceBranchNameWrapperRepositoryService);
@@ -18,5 +19,13 @@ if (gitTargetBranchName != null) {
 }
 else {
     console.log("Target Branch is NULL");
+}
+var gitPullRequestEventWrapperRepositoryService = Container_1.IoCContainer.resolve(IGitPullRequestEventWrapperRepositoryService_1.IGitPullRequestEventWrapperRepositoryService);
+var gitPullRequestEventType = gitPullRequestEventWrapperRepositoryService.getGitPullRequestEventType();
+if (gitPullRequestEventType != null) {
+    console.log("Git Pull Request Event Type: " + gitPullRequestEventType.toString());
+}
+else {
+    console.log("Git Pull Request Event Type is NULL");
 }
 //# sourceMappingURL=app.js.map
