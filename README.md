@@ -12,7 +12,7 @@ This action allow:
 name: 'Damm DevOps - Gitflow pull request restriction'
 on: 
   pull_request:
-    types: [opened, edited, reopened]
+    types: [opened, edited, reopened, synchronize]
 jobs:
   build:
     runs-on: ubuntu-latest
