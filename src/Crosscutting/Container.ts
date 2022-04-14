@@ -7,9 +7,11 @@ import { GitDefaultBranchNameApplicationService } from "../Application/Core/Impl
 import { GitEventApplicationService } from "../Application/Core/Impl/GitEventApplicationService";
 import { IActionResultDomainService } from "../Domain/Services/Core/IActionResultDomainService";
 import { IGitDefaultBranchNameDomainService } from "../Domain/Services/Core/IGitDefaultBranchNameDomainService";
+import { IGitEventBusinessRuleDomainService } from "../Domain/Services/Core/IGitEventBusinessRuleDomainService";
 import { IGitEventDomainService } from "../Domain/Services/Core/IGitEventDomainService";
 import { ActionResultDomainService } from "../Domain/Services/Core/Impl/ActionResultDomainService";
 import { GitDefaultBranchNameDomainService } from "../Domain/Services/Core/Impl/GitDefaultBranchNameDomainService";
+import { GitEventBusinessRuleDomainService } from "../Domain/Services/Core/Impl/GitEventBusinessRuleDomainService";
 import { GitEventDomainService } from "../Domain/Services/Core/Impl/GitEventDomainService";
 import { IActionResultRepositoryService } from "../Infrastructure/Core/IActionResultRepositoryService";
 import { IGitDefaultBranchNameRepositoryService } from "../Infrastructure/Core/IGitDefaultBranchNameRepositoryService";
@@ -37,6 +39,7 @@ export class IoCContainer {
         // Domain
         Container.bind(IActionResultDomainService).to(ActionResultDomainService);
         Container.bind(IGitDefaultBranchNameDomainService).to(GitDefaultBranchNameDomainService);
+        Container.bind(IGitEventBusinessRuleDomainService).to(GitEventBusinessRuleDomainService);
         Container.bind(IGitEventDomainService).to(GitEventDomainService);
 
         // Infrastructure
