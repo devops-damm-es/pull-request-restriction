@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Container_1 = require("./Crosscutting/Container");
+const GitPullRequestEventTypeEnum_1 = require("./Domain/Enums/GitPullRequestEventTypeEnum");
 const IGitPullRequestEventWrapperRepositoryService_1 = require("./Infrastructure/Core/Wrapper/IGitPullRequestEventWrapperRepositoryService");
 const IGitSourceBranchNameWrapperRepositoryService_1 = require("./Infrastructure/Core/Wrapper/IGitSourceBranchNameWrapperRepositoryService");
 const IGitTargetBranchNameWrapperRepositoryService_1 = require("./Infrastructure/Core/Wrapper/IGitTargetBranchNameWrapperRepositoryService");
@@ -23,7 +24,7 @@ else {
 var gitPullRequestEventWrapperRepositoryService = Container_1.IoCContainer.resolve(IGitPullRequestEventWrapperRepositoryService_1.IGitPullRequestEventWrapperRepositoryService);
 var gitPullRequestEventType = gitPullRequestEventWrapperRepositoryService.getGitPullRequestEventType();
 if (gitPullRequestEventType != null) {
-    console.log("Git Pull Request Event Type: " + gitPullRequestEventType.toString());
+    console.log("Git Pull Request Event Type: " + GitPullRequestEventTypeEnum_1.GitPullRequestEventTypeEnum[gitPullRequestEventType.toString()]);
 }
 else {
     console.log("Git Pull Request Event Type is NULL");

@@ -1,4 +1,5 @@
 import { IoCContainer } from "./Crosscutting/Container";
+import { GitPullRequestEventTypeEnum } from "./Domain/Enums/GitPullRequestEventTypeEnum";
 import { IGitPullRequestEventWrapperRepositoryService } from "./Infrastructure/Core/Wrapper/IGitPullRequestEventWrapperRepositoryService";
 import { IGitSourceBranchNameWrapperRepositoryService } from "./Infrastructure/Core/Wrapper/IGitSourceBranchNameWrapperRepositoryService";
 import { IGitTargetBranchNameWrapperRepositoryService } from "./Infrastructure/Core/Wrapper/IGitTargetBranchNameWrapperRepositoryService";
@@ -22,7 +23,7 @@ if (gitTargetBranchName != null) {
 var gitPullRequestEventWrapperRepositoryService = IoCContainer.resolve(IGitPullRequestEventWrapperRepositoryService);
 var gitPullRequestEventType = gitPullRequestEventWrapperRepositoryService.getGitPullRequestEventType();
 if (gitPullRequestEventType != null) {
-    console.log("Git Pull Request Event Type: " + gitPullRequestEventType.toString());
+    console.log("Git Pull Request Event Type: " + GitPullRequestEventTypeEnum[gitPullRequestEventType.toString()]);
 } else {
     console.log("Git Pull Request Event Type is NULL");
 }
