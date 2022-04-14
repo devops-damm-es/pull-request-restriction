@@ -22,9 +22,13 @@ import { GitEventRepositoryService } from "../Infrastructure/Core/Impl/GitEventR
 import { IActionResultWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/IActionResultWrapperRepositoryService";
 import { IGitDefaultBranchNameWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/IGitDefaultBranchNameWrapperRepositoryService";
 import { IGitEventWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/IGitEventWrapperRepositoryService";
+import { IGitSourceBranchNameWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/IGitSourceBranchNameWrapperRepositoryService";
+import { IGitTargetBranchNameWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/IGitTargetBranchNameWrapperRepositoryService";
 import { ActionResultWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/Impl/ActionResultWrapperRepositoryService";
 import { GitDefaultBranchNameWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/Impl/GitDefaultBranchNameWrapperRepositoryService";
 import { GitEventWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/Impl/GitEventWrapperRepositoryService";
+import { GitSourceBranchNameWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/Impl/GitSourceBranchNameWrapperRepositoryService";
+import { GitTargetBranchNameWrapperRepositoryService } from "../Infrastructure/Core/Wrapper/Impl/GitTargetBranchNameWrapperRepositoryService";
 
 export class IoCContainer {
     private static isLoaded: boolean;
@@ -50,6 +54,8 @@ export class IoCContainer {
         Container.bind(IActionResultWrapperRepositoryService).to(ActionResultWrapperRepositoryService);
         Container.bind(IGitDefaultBranchNameWrapperRepositoryService).to(GitDefaultBranchNameWrapperRepositoryService);
         Container.bind(IGitEventWrapperRepositoryService).to(GitEventWrapperRepositoryService);
+        Container.bind(IGitSourceBranchNameWrapperRepositoryService).to(GitSourceBranchNameWrapperRepositoryService);
+        Container.bind(IGitTargetBranchNameWrapperRepositoryService).to(GitTargetBranchNameWrapperRepositoryService);
     }
 
     static resolve(arg: any): any {
