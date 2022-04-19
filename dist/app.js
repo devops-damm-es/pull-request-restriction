@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const IGitAuthenticationApplicationService_1 = require("./Application/Core/IGitAuthenticationApplicationService");
+const IGitRepositoryApplicationService_1 = require("./Application/Core/IGitRepositoryApplicationService");
 const Container_1 = require("./Crosscutting/Container");
 const GitPullRequestEventTypeEnum_1 = require("./Domain/Enums/GitPullRequestEventTypeEnum");
+const IGitBranchWrapperRepositoryService_1 = require("./Infrastructure/Core/Wrapper/IGitBranchWrapperRepositoryService");
 const IGitPullRequestEventWrapperRepositoryService_1 = require("./Infrastructure/Core/Wrapper/IGitPullRequestEventWrapperRepositoryService");
 const IGitSourceBranchNameWrapperRepositoryService_1 = require("./Infrastructure/Core/Wrapper/IGitSourceBranchNameWrapperRepositoryService");
 const IGitTargetBranchNameWrapperRepositoryService_1 = require("./Infrastructure/Core/Wrapper/IGitTargetBranchNameWrapperRepositoryService");
@@ -29,4 +32,17 @@ if (gitPullRequestEventType != null) {
 else {
     console.log("Git Pull Request Event Type is NULL");
 }
+var gitAuthenticationApplicationService = Container_1.IoCContainer.resolve(IGitAuthenticationApplicationService_1.IGitAuthenticationApplicationService);
+var gitAuthentication = gitAuthenticationApplicationService.getGitAuthentication();
+var gitRepositoryApplicationService = Container_1.IoCContainer.resolve(IGitRepositoryApplicationService_1.IGitRepositoryApplicationService);
+var gitRepository = gitRepositoryApplicationService.getGitRepository();
+var gitBranchWrapperRepositoryService = Container_1.IoCContainer.resolve(IGitBranchWrapperRepositoryService_1.IGitBranchWrapperRepositoryService);
+gitBranchWrapperRepositoryService.getGitBranchComparison(gitSourceBranchName, gitTargetBranchName, gitRepository, gitAuthentication)
+    .then(gitBranchComparison => {
+    console.log("Number Of Commits Ahead: " + gitBranchComparison.numberOfCommitsAhead);
+    console.log("Number Of Commits Behind: " + gitBranchComparison.numberOfCommitsBehind);
+})
+    .catch(_ => {
+    console.log("Error when get git branch comparison");
+});
 //# sourceMappingURL=app.js.map
