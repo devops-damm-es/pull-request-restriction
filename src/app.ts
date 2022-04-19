@@ -1,8 +1,8 @@
 import { IGitAuthenticationApplicationService } from "./Application/Core/IGitAuthenticationApplicationService";
+import { IGitBranchApplicationService } from "./Application/Core/IGitBranchApplicationService";
 import { IGitRepositoryApplicationService } from "./Application/Core/IGitRepositoryApplicationService";
 import { IoCContainer } from "./Crosscutting/Container";
 import { GitPullRequestEventTypeEnum } from "./Domain/Enums/GitPullRequestEventTypeEnum";
-import { IGitBranchWrapperRepositoryService } from "./Infrastructure/Core/Wrapper/IGitBranchWrapperRepositoryService";
 import { IGitPullRequestEventWrapperRepositoryService } from "./Infrastructure/Core/Wrapper/IGitPullRequestEventWrapperRepositoryService";
 import { IGitSourceBranchNameWrapperRepositoryService } from "./Infrastructure/Core/Wrapper/IGitSourceBranchNameWrapperRepositoryService";
 import { IGitTargetBranchNameWrapperRepositoryService } from "./Infrastructure/Core/Wrapper/IGitTargetBranchNameWrapperRepositoryService";
@@ -37,8 +37,8 @@ var gitAuthentication = gitAuthenticationApplicationService.getGitAuthentication
 var gitRepositoryApplicationService = IoCContainer.resolve(IGitRepositoryApplicationService);
 var gitRepository = gitRepositoryApplicationService.getGitRepository();
 
-var gitBranchWrapperRepositoryService = IoCContainer.resolve(IGitBranchWrapperRepositoryService);
-gitBranchWrapperRepositoryService.getGitBranchComparison(
+var gitBranchApplicationService = IoCContainer.resolve(IGitBranchApplicationService);
+gitBranchApplicationService.getGitBranchComparison(
     gitSourceBranchName,
     gitTargetBranchName,
     gitRepository,

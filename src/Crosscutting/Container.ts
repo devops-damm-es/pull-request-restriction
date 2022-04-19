@@ -1,6 +1,7 @@
 import { Container } from "typescript-ioc";
 import { IActionResultApplicationService } from "../Application/Core/IActionResultApplicationService";
 import { IGitAuthenticationApplicationService } from "../Application/Core/IGitAuthenticationApplicationService";
+import { IGitBranchApplicationService } from "../Application/Core/IGitBranchApplicationService";
 import { IGitDefaultBranchNameApplicationService } from "../Application/Core/IGitDefaultBranchNameApplicationService";
 import { IGitEventApplicationService } from "../Application/Core/IGitEventApplicationService";
 import { IGitPullRequestEventApplicationService } from "../Application/Core/IGitPullRequestEventApplicationService";
@@ -9,6 +10,7 @@ import { IGitSourceBranchNameApplicationService } from "../Application/Core/IGit
 import { IGitTargetBranchNameApplicationService } from "../Application/Core/IGitTargetBranchNameApplicationService";
 import { ActionResultApplicationService } from "../Application/Core/Impl/ActionResultApplicationService";
 import { GitAuthenticationApplicationService } from "../Application/Core/Impl/GitAuthenticationApplicationService";
+import { GitBranchApplicationService } from "../Application/Core/Impl/GitBranchApplicationService";
 import { GitDefaultBranchNameApplicationService } from "../Application/Core/Impl/GitDefaultBranchNameApplicationService";
 import { GitEventApplicationService } from "../Application/Core/Impl/GitEventApplicationService";
 import { GitPullRequestEventApplicationService } from "../Application/Core/Impl/GitPullRequestEventApplicationService";
@@ -17,6 +19,7 @@ import { GitSourceBranchNameApplicationService } from "../Application/Core/Impl/
 import { GitTargetBranchNameApplicationService } from "../Application/Core/Impl/GitTargetBranchNameApplicationService";
 import { IActionResultDomainService } from "../Domain/Services/Core/IActionResultDomainService";
 import { IGitAuthenticationDomainService } from "../Domain/Services/Core/IGitAuthenticationDomainService";
+import { IGitBranchDomainService } from "../Domain/Services/Core/IGitBranchDomainService";
 import { IGitDefaultBranchNameDomainService } from "../Domain/Services/Core/IGitDefaultBranchNameDomainService";
 import { IGitEventBusinessRuleDomainService } from "../Domain/Services/Core/IGitEventBusinessRuleDomainService";
 import { IGitEventDomainService } from "../Domain/Services/Core/IGitEventDomainService";
@@ -27,6 +30,7 @@ import { IGitSourceBranchNameDomainService } from "../Domain/Services/Core/IGitS
 import { IGitTargetBranchNameDomainService } from "../Domain/Services/Core/IGitTargetBranchNameDomainService";
 import { ActionResultDomainService } from "../Domain/Services/Core/Impl/ActionResultDomainService";
 import { GitAuthenticationDomainService } from "../Domain/Services/Core/Impl/GitAuthenticationDomainService";
+import { GitBranchDomainService } from "../Domain/Services/Core/Impl/GitBranchDomainService";
 import { GitDefaultBranchNameDomainService } from "../Domain/Services/Core/Impl/GitDefaultBranchNameDomainService";
 import { GitEventBusinessRuleDomainService } from "../Domain/Services/Core/Impl/GitEventBusinessRuleDomainService";
 import { GitEventDomainService } from "../Domain/Services/Core/Impl/GitEventDomainService";
@@ -37,6 +41,7 @@ import { GitSourceBranchNameDomainService } from "../Domain/Services/Core/Impl/G
 import { GitTargetBranchNameDomainService } from "../Domain/Services/Core/Impl/GitTargetBranchNameDomainService";
 import { IActionResultRepositoryService } from "../Infrastructure/Core/IActionResultRepositoryService";
 import { IGitAuthenticationRepositoryService } from "../Infrastructure/Core/IGitAuthenticationRepositoryService";
+import { IGitBranchRepositoryService } from "../Infrastructure/Core/IGitBranchRepositoryService";
 import { IGitDefaultBranchNameRepositoryService } from "../Infrastructure/Core/IGitDefaultBranchNameRepositoryService";
 import { IGitEventRepositoryService } from "../Infrastructure/Core/IGitEventRepositoryService";
 import { IGitPullRequestEventRepositoryService } from "../Infrastructure/Core/IGitPullRequestEventRepositoryService";
@@ -45,6 +50,7 @@ import { IGitSourceBranchNameRepositoryService } from "../Infrastructure/Core/IG
 import { IGitTargetBranchNameRepositoryService } from "../Infrastructure/Core/IGitTargetBranchNameRepositoryService";
 import { ActionResultRepositoryService } from "../Infrastructure/Core/Impl/ActionResultRepositoryService";
 import { GitAuthenticationRepositoryService } from "../Infrastructure/Core/Impl/GitAuthenticationRepositoryService";
+import { GitBranchRepositoryService } from "../Infrastructure/Core/Impl/GitBranchRepositoryService";
 import { GitDefaultBranchNameRepositoryService } from "../Infrastructure/Core/Impl/GitDefaultBranchNameRepositoryService";
 import { GitEventRepositoryService } from "../Infrastructure/Core/Impl/GitEventRepositoryService";
 import { GitPullRequestEventRepositoryService } from "../Infrastructure/Core/Impl/GitPullRequestEventRepositoryService";
@@ -78,6 +84,7 @@ export class IoCContainer {
         // Application
         Container.bind(IActionResultApplicationService).to(ActionResultApplicationService);
         Container.bind(IGitAuthenticationApplicationService).to(GitAuthenticationApplicationService);
+        Container.bind(IGitBranchApplicationService).to(GitBranchApplicationService);
         Container.bind(IGitDefaultBranchNameApplicationService).to(GitDefaultBranchNameApplicationService);
         Container.bind(IGitEventApplicationService).to(GitEventApplicationService);
         Container.bind(IGitPullRequestEventApplicationService).to(GitPullRequestEventApplicationService);
@@ -88,6 +95,7 @@ export class IoCContainer {
         // Domain
         Container.bind(IActionResultDomainService).to(ActionResultDomainService);
         Container.bind(IGitAuthenticationDomainService).to(GitAuthenticationDomainService);
+        Container.bind(IGitBranchDomainService).to(GitBranchDomainService);
         Container.bind(IGitDefaultBranchNameDomainService).to(GitDefaultBranchNameDomainService);
         Container.bind(IGitEventBusinessRuleDomainService).to(GitEventBusinessRuleDomainService);
         Container.bind(IGitEventDomainService).to(GitEventDomainService);
@@ -100,7 +108,7 @@ export class IoCContainer {
         // Infrastructure
         Container.bind(IActionResultRepositoryService).to(ActionResultRepositoryService);
         Container.bind(IGitAuthenticationRepositoryService).to(GitAuthenticationRepositoryService);
-        Container.bind(IGitBranchWrapperRepositoryService).to(GitBranchWrapperRepositoryService);
+        Container.bind(IGitBranchRepositoryService).to(GitBranchRepositoryService);
         Container.bind(IGitDefaultBranchNameRepositoryService).to(GitDefaultBranchNameRepositoryService);
         Container.bind(IGitEventRepositoryService).to(GitEventRepositoryService);
         Container.bind(IGitPullRequestEventRepositoryService).to(GitPullRequestEventRepositoryService);
@@ -110,6 +118,7 @@ export class IoCContainer {
 
         Container.bind(IActionResultWrapperRepositoryService).to(ActionResultWrapperRepositoryService);
         Container.bind(IGitAuthenticationWrapperRepositoryService).to(GitAuthenticationWrapperRepositoryService);
+        Container.bind(IGitBranchWrapperRepositoryService).to(GitBranchWrapperRepositoryService);
         Container.bind(IGitDefaultBranchNameWrapperRepositoryService).to(GitDefaultBranchNameWrapperRepositoryService);
         Container.bind(IGitEventWrapperRepositoryService).to(GitEventWrapperRepositoryService);
         Container.bind(IGitPullRequestEventWrapperRepositoryService).to(GitPullRequestEventWrapperRepositoryService);

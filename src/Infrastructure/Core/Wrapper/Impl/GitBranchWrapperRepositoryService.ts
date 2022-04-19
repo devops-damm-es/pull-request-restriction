@@ -5,7 +5,7 @@ import { GitRepository } from '../../../../Domain/Entities/GitRepository';
 import { IGitBranchWrapperRepositoryService } from '../IGitBranchWrapperRepositoryService';
 
 export class GitBranchWrapperRepositoryService implements IGitBranchWrapperRepositoryService {
-    getGitBranchComparison(
+    async getGitBranchComparison(
         sourceBranchName: String,
         targetBranchName: String,
         gitRepository: GitRepository,
