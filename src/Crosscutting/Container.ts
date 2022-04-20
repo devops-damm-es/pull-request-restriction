@@ -19,6 +19,7 @@ import { GitSourceBranchNameApplicationService } from "../Application/Core/Impl/
 import { GitTargetBranchNameApplicationService } from "../Application/Core/Impl/GitTargetBranchNameApplicationService";
 import { IActionResultDomainService } from "../Domain/Services/Core/IActionResultDomainService";
 import { IGitAuthenticationDomainService } from "../Domain/Services/Core/IGitAuthenticationDomainService";
+import { IGitBranchComparisonBusinessRuleDomainService } from "../Domain/Services/Core/IGitBranchComparisonBusinessRuleDomainService";
 import { IGitBranchDomainService } from "../Domain/Services/Core/IGitBranchDomainService";
 import { IGitDefaultBranchNameDomainService } from "../Domain/Services/Core/IGitDefaultBranchNameDomainService";
 import { IGitEventBusinessRuleDomainService } from "../Domain/Services/Core/IGitEventBusinessRuleDomainService";
@@ -32,6 +33,7 @@ import { IGitSourceBranchNameDomainService } from "../Domain/Services/Core/IGitS
 import { IGitTargetBranchNameDomainService } from "../Domain/Services/Core/IGitTargetBranchNameDomainService";
 import { ActionResultDomainService } from "../Domain/Services/Core/Impl/ActionResultDomainService";
 import { GitAuthenticationDomainService } from "../Domain/Services/Core/Impl/GitAuthenticationDomainService";
+import { GitBranchComparisonBusinessRuleDomainService } from "../Domain/Services/Core/Impl/GitBranchComparisonBusinessRuleDomainService";
 import { GitBranchDomainService } from "../Domain/Services/Core/Impl/GitBranchDomainService";
 import { GitDefaultBranchNameDomainService } from "../Domain/Services/Core/Impl/GitDefaultBranchNameDomainService";
 import { GitEventBusinessRuleDomainService } from "../Domain/Services/Core/Impl/GitEventBusinessRuleDomainService";
@@ -99,6 +101,7 @@ export class IoCContainer {
         // Domain
         Container.bind(IActionResultDomainService).to(ActionResultDomainService);
         Container.bind(IGitAuthenticationDomainService).to(GitAuthenticationDomainService);
+        Container.bind(IGitBranchComparisonBusinessRuleDomainService).to(GitBranchComparisonBusinessRuleDomainService);
         Container.bind(IGitBranchDomainService).to(GitBranchDomainService);
         Container.bind(IGitDefaultBranchNameDomainService).to(GitDefaultBranchNameDomainService);
         Container.bind(IGitEventBusinessRuleDomainService).to(GitEventBusinessRuleDomainService);

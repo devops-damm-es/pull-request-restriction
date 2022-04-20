@@ -22,6 +22,7 @@ const GitSourceBranchNameApplicationService_1 = require("../Application/Core/Imp
 const GitTargetBranchNameApplicationService_1 = require("../Application/Core/Impl/GitTargetBranchNameApplicationService");
 const IActionResultDomainService_1 = require("../Domain/Services/Core/IActionResultDomainService");
 const IGitAuthenticationDomainService_1 = require("../Domain/Services/Core/IGitAuthenticationDomainService");
+const IGitBranchComparisonBusinessRuleDomainService_1 = require("../Domain/Services/Core/IGitBranchComparisonBusinessRuleDomainService");
 const IGitBranchDomainService_1 = require("../Domain/Services/Core/IGitBranchDomainService");
 const IGitDefaultBranchNameDomainService_1 = require("../Domain/Services/Core/IGitDefaultBranchNameDomainService");
 const IGitEventBusinessRuleDomainService_1 = require("../Domain/Services/Core/IGitEventBusinessRuleDomainService");
@@ -29,11 +30,13 @@ const IGitEventDomainService_1 = require("../Domain/Services/Core/IGitEventDomai
 const IGitPullRequestBusinessRuleDomainService_1 = require("../Domain/Services/Core/IGitPullRequestBusinessRuleDomainService");
 const IGitPullRequestEventBusinessRuleDomainService_1 = require("../Domain/Services/Core/IGitPullRequestEventBusinessRuleDomainService");
 const IGitPullRequestEventDomainService_1 = require("../Domain/Services/Core/IGitPullRequestEventDomainService");
+const IGitReleaseBranchBusinessRuleDomainService_1 = require("../Domain/Services/Core/IGitReleaseBranchBusinessRuleDomainService");
 const IGitRepositoryDomainService_1 = require("../Domain/Services/Core/IGitRepositoryDomainService");
 const IGitSourceBranchNameDomainService_1 = require("../Domain/Services/Core/IGitSourceBranchNameDomainService");
 const IGitTargetBranchNameDomainService_1 = require("../Domain/Services/Core/IGitTargetBranchNameDomainService");
 const ActionResultDomainService_1 = require("../Domain/Services/Core/Impl/ActionResultDomainService");
 const GitAuthenticationDomainService_1 = require("../Domain/Services/Core/Impl/GitAuthenticationDomainService");
+const GitBranchComparisonBusinessRuleDomainService_1 = require("../Domain/Services/Core/Impl/GitBranchComparisonBusinessRuleDomainService");
 const GitBranchDomainService_1 = require("../Domain/Services/Core/Impl/GitBranchDomainService");
 const GitDefaultBranchNameDomainService_1 = require("../Domain/Services/Core/Impl/GitDefaultBranchNameDomainService");
 const GitEventBusinessRuleDomainService_1 = require("../Domain/Services/Core/Impl/GitEventBusinessRuleDomainService");
@@ -41,6 +44,7 @@ const GitEventDomainService_1 = require("../Domain/Services/Core/Impl/GitEventDo
 const GitPullRequestBusinessRuleDomainService_1 = require("../Domain/Services/Core/Impl/GitPullRequestBusinessRuleDomainService");
 const GitPullRequestEventBusinessRuleDomainService_1 = require("../Domain/Services/Core/Impl/GitPullRequestEventBusinessRuleDomainService");
 const GitPullRequestEventDomainService_1 = require("../Domain/Services/Core/Impl/GitPullRequestEventDomainService");
+const GitReleaseBranchBusinessRuleDomainService_1 = require("../Domain/Services/Core/Impl/GitReleaseBranchBusinessRuleDomainService");
 const GitRepositoryDomainService_1 = require("../Domain/Services/Core/Impl/GitRepositoryDomainService");
 const GitSourceBranchNameDomainService_1 = require("../Domain/Services/Core/Impl/GitSourceBranchNameDomainService");
 const GitTargetBranchNameDomainService_1 = require("../Domain/Services/Core/Impl/GitTargetBranchNameDomainService");
@@ -95,6 +99,7 @@ class IoCContainer {
         // Domain
         typescript_ioc_1.Container.bind(IActionResultDomainService_1.IActionResultDomainService).to(ActionResultDomainService_1.ActionResultDomainService);
         typescript_ioc_1.Container.bind(IGitAuthenticationDomainService_1.IGitAuthenticationDomainService).to(GitAuthenticationDomainService_1.GitAuthenticationDomainService);
+        typescript_ioc_1.Container.bind(IGitBranchComparisonBusinessRuleDomainService_1.IGitBranchComparisonBusinessRuleDomainService).to(GitBranchComparisonBusinessRuleDomainService_1.GitBranchComparisonBusinessRuleDomainService);
         typescript_ioc_1.Container.bind(IGitBranchDomainService_1.IGitBranchDomainService).to(GitBranchDomainService_1.GitBranchDomainService);
         typescript_ioc_1.Container.bind(IGitDefaultBranchNameDomainService_1.IGitDefaultBranchNameDomainService).to(GitDefaultBranchNameDomainService_1.GitDefaultBranchNameDomainService);
         typescript_ioc_1.Container.bind(IGitEventBusinessRuleDomainService_1.IGitEventBusinessRuleDomainService).to(GitEventBusinessRuleDomainService_1.GitEventBusinessRuleDomainService);
@@ -102,6 +107,7 @@ class IoCContainer {
         typescript_ioc_1.Container.bind(IGitPullRequestBusinessRuleDomainService_1.IGitPullRequestBusinessRuleDomainService).to(GitPullRequestBusinessRuleDomainService_1.GitPullRequestBusinessRuleDomainService);
         typescript_ioc_1.Container.bind(IGitPullRequestEventBusinessRuleDomainService_1.IGitPullRequestEventBusinessRuleDomainService).to(GitPullRequestEventBusinessRuleDomainService_1.GitPullRequestEventBusinessRuleDomainService);
         typescript_ioc_1.Container.bind(IGitPullRequestEventDomainService_1.IGitPullRequestEventDomainService).to(GitPullRequestEventDomainService_1.GitPullRequestEventDomainService);
+        typescript_ioc_1.Container.bind(IGitReleaseBranchBusinessRuleDomainService_1.IGitReleaseBranchBusinessRuleDomainService).to(GitReleaseBranchBusinessRuleDomainService_1.GitReleaseBranchBusinessRuleDomainService);
         typescript_ioc_1.Container.bind(IGitRepositoryDomainService_1.IGitRepositoryDomainService).to(GitRepositoryDomainService_1.GitRepositoryDomainService);
         typescript_ioc_1.Container.bind(IGitSourceBranchNameDomainService_1.IGitSourceBranchNameDomainService).to(GitSourceBranchNameDomainService_1.GitSourceBranchNameDomainService);
         typescript_ioc_1.Container.bind(IGitTargetBranchNameDomainService_1.IGitTargetBranchNameDomainService).to(GitTargetBranchNameDomainService_1.GitTargetBranchNameDomainService);
