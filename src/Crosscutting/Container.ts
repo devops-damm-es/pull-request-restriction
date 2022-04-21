@@ -17,6 +17,8 @@ import { GitPullRequestEventApplicationService } from "../Application/Core/Impl/
 import { GitRepositoryApplicationService } from "../Application/Core/Impl/GitRepositoryApplicationService";
 import { GitSourceBranchNameApplicationService } from "../Application/Core/Impl/GitSourceBranchNameApplicationService";
 import { GitTargetBranchNameApplicationService } from "../Application/Core/Impl/GitTargetBranchNameApplicationService";
+import { IMainApplicationService } from "../Application/IMainApplicationService";
+import { MainApplicationService } from "../Application/Impl/MainApplicationService";
 import { IActionResultDomainService } from "../Domain/Services/Core/IActionResultDomainService";
 import { IGitAuthenticationDomainService } from "../Domain/Services/Core/IGitAuthenticationDomainService";
 import { IGitBranchComparisonBusinessRuleDomainService } from "../Domain/Services/Core/IGitBranchComparisonBusinessRuleDomainService";
@@ -97,6 +99,7 @@ export class IoCContainer {
         Container.bind(IGitRepositoryApplicationService).to(GitRepositoryApplicationService);
         Container.bind(IGitSourceBranchNameApplicationService).to(GitSourceBranchNameApplicationService);
         Container.bind(IGitTargetBranchNameApplicationService).to(GitTargetBranchNameApplicationService);
+        Container.bind(IMainApplicationService).to(MainApplicationService);
 
         // Domain
         Container.bind(IActionResultDomainService).to(ActionResultDomainService);

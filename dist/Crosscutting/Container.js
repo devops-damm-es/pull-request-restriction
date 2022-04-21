@@ -20,6 +20,8 @@ const GitPullRequestEventApplicationService_1 = require("../Application/Core/Imp
 const GitRepositoryApplicationService_1 = require("../Application/Core/Impl/GitRepositoryApplicationService");
 const GitSourceBranchNameApplicationService_1 = require("../Application/Core/Impl/GitSourceBranchNameApplicationService");
 const GitTargetBranchNameApplicationService_1 = require("../Application/Core/Impl/GitTargetBranchNameApplicationService");
+const IMainApplicationService_1 = require("../Application/IMainApplicationService");
+const MainApplicationService_1 = require("../Application/Impl/MainApplicationService");
 const IActionResultDomainService_1 = require("../Domain/Services/Core/IActionResultDomainService");
 const IGitAuthenticationDomainService_1 = require("../Domain/Services/Core/IGitAuthenticationDomainService");
 const IGitBranchComparisonBusinessRuleDomainService_1 = require("../Domain/Services/Core/IGitBranchComparisonBusinessRuleDomainService");
@@ -96,6 +98,7 @@ class IoCContainer {
         typescript_ioc_1.Container.bind(IGitRepositoryApplicationService_1.IGitRepositoryApplicationService).to(GitRepositoryApplicationService_1.GitRepositoryApplicationService);
         typescript_ioc_1.Container.bind(IGitSourceBranchNameApplicationService_1.IGitSourceBranchNameApplicationService).to(GitSourceBranchNameApplicationService_1.GitSourceBranchNameApplicationService);
         typescript_ioc_1.Container.bind(IGitTargetBranchNameApplicationService_1.IGitTargetBranchNameApplicationService).to(GitTargetBranchNameApplicationService_1.GitTargetBranchNameApplicationService);
+        typescript_ioc_1.Container.bind(IMainApplicationService_1.IMainApplicationService).to(MainApplicationService_1.MainApplicationService);
         // Domain
         typescript_ioc_1.Container.bind(IActionResultDomainService_1.IActionResultDomainService).to(ActionResultDomainService_1.ActionResultDomainService);
         typescript_ioc_1.Container.bind(IGitAuthenticationDomainService_1.IGitAuthenticationDomainService).to(GitAuthenticationDomainService_1.GitAuthenticationDomainService);
