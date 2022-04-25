@@ -29,7 +29,7 @@ export class GitBranchWrapperRepositoryService implements IGitBranchWrapperRepos
                     })
                     .catch(_ => { reject(null); })
             } catch {
-                reject(false);
+                reject(null);
             }
         });
     }

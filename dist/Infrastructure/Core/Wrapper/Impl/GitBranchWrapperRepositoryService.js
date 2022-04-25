@@ -31,7 +31,7 @@ class GitBranchWrapperRepositoryService {
                         .catch(_ => { reject(null); });
                 }
                 catch (_a) {
-                    reject(false);
+                    reject(null);
                 }
             });
         });
