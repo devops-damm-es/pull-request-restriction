@@ -2,10 +2,15 @@
 
 Damm DevOps - Gitflow pull request restriction
 
-This action allow:
+This action allow pull request when:
 
-- Pull Request from feature/*** to develop
-- Pull Request from develop or hotfix/*** to default branch (usually main or master)
+- Pull Request from feature/xxx to develop
+- Pull Request from develop, release/xxx or hotfix/xxx to default branch (usually main or master)
+
+And not allow pull request when:
+
+- Release branch has commits that not in develop branch
+- Source branch has commits behind target branch
 ## Example usage
 
 ```yaml
