@@ -20,10 +20,6 @@ export class GitBranchWrapperRepositoryService implements IGitBranchWrapperRepos
                     head: sourceBranchName as string
                 })
                     .then(response => {
-                        console.log("Source branch: " + sourceBranchName);
-                        console.log("Target branch: " + targetBranchName);
-                        console.log("Number of commits ahead: " + response.data.ahead_by);
-                        console.log("Number of commits behind: " + response.data.behind_by);
                         var gitBranchComparison = new GitBranchComparison(
                             sourceBranchName,
                             targetBranchName,
