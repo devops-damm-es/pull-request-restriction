@@ -1,10 +1,9 @@
-import * as github from '@actions/github';
 import { IGitSourceBranchNameWrapperRepositoryService } from '../IGitSourceBranchNameWrapperRepositoryService';
 
 export class GitSourceBranchNameWrapperRepositoryService implements IGitSourceBranchNameWrapperRepositoryService {
     getGitSourceBranchName(): String | null {
         try {
-            const sourceBranchName = github.context.payload.pull_request.head.ref;
+            const sourceBranchName = process.env.SOURCE_BRANCH_NAME;
             if (sourceBranchName != null && sourceBranchName.length > 0) {
                 return sourceBranchName;
             } else {

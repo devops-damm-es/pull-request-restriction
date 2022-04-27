@@ -1,11 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GitSourceBranchNameWrapperRepositoryService = void 0;
-const github = require("@actions/github");
 class GitSourceBranchNameWrapperRepositoryService {
     getGitSourceBranchName() {
         try {
-            const sourceBranchName = github.context.payload.pull_request.head.ref;
+            const sourceBranchName = process.env.SOURCE_BRANCH_NAME;
             if (sourceBranchName != null && sourceBranchName.length > 0) {
                 return sourceBranchName;
             }
