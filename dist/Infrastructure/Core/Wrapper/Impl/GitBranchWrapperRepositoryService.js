@@ -21,10 +21,14 @@ class GitBranchWrapperRepositoryService {
                     client.repos.compareCommits({
                         owner: gitRepository.owner,
                         repo: gitRepository.name,
-                        base: sourceBranchName,
-                        head: targetBranchName
+                        base: targetBranchName,
+                        head: sourceBranchName
                     })
                         .then(response => {
+                        console.log("Source branch: " + sourceBranchName);
+                        console.log("Target branch: " + targetBranchName);
+                        console.log("Number of commits ahead: " + response.data.ahead_by);
+                        console.log("Number of commits behind: " + response.data.behind_by);
                         var gitBranchComparison = new GitBranchComparison_1.GitBranchComparison(sourceBranchName, targetBranchName, response.data.ahead_by, response.data.behind_by);
                         resolve(gitBranchComparison);
                     })
