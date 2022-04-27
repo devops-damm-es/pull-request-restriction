@@ -16,8 +16,8 @@ export class GitBranchWrapperRepositoryService implements IGitBranchWrapperRepos
                 client.repos.compareCommits({
                     owner: gitRepository.owner as string,
                     repo: gitRepository.name as string,
-                    base: targetBranchName as string,
-                    head: sourceBranchName as string
+                    base: sourceBranchName as string,
+                    head: targetBranchName as string
                 })
                     .then(response => {
                         var gitBranchComparison = new GitBranchComparison(

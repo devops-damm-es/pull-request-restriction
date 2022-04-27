@@ -21,8 +21,8 @@ class GitBranchWrapperRepositoryService {
                     client.repos.compareCommits({
                         owner: gitRepository.owner,
                         repo: gitRepository.name,
-                        base: targetBranchName,
-                        head: sourceBranchName
+                        base: sourceBranchName,
+                        head: targetBranchName
                     })
                         .then(response => {
                         var gitBranchComparison = new GitBranchComparison_1.GitBranchComparison(sourceBranchName, targetBranchName, response.data.ahead_by, response.data.behind_by);
