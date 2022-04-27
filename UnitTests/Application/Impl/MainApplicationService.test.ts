@@ -343,46 +343,6 @@ test("start_IsGitReleaseSourceBranchTrue_IsAllowedGitBranchComparisonFalse_Actio
     expect(mockActionResultApplicationService.setActionResult).toBeCalledTimes(1);
 });
 
-test("start_IsGitReleaseSourceBranchTrue_GitBranchComparisonPreviousBranchComparisonTrueBranchComparisonFalse_ActionResultFalse_Ok", async () => {
-    // Arrange
-    let sut = new MainApplicationService(
-        mockGitEventGitEventTypePushApplicationService,
-        mockGitEventBusinessRuleIsAllowedGitEventTypeTrueDomainService,
-        mockGitPullRequestEventApplicationService,
-        mockGitPullRequestEventBusinessRuleIsAllowedGitPullRequestEventTypeTrueDomainService,
-        mockGitDefaultBranchNameApplicationService,
-        mockGitSourceBranchNameApplicationService,
-        mockGitTargetBranchNameApplicationService,
-        mockGitPullRequestBusinessRuleIsAllowedGitPullRequestTrueDomainService,
-        mockGitAuthenticationApplicationService,
-        mockGitRepositoryApplicationService,
-        mockGitReleaseBranchBusinessRuleIsGitReleaseSourceBranchTrueDomainService,
-        mockGitBranchGetGitBranchComparisonApplicationService,
-        mockGitBranchComparisonBusinessRuleIsAllowedGitBranchComparisonPreviousBranchComparisonTrueBranchComparisonFalseDomainService,
-        mockActionResultApplicationService);
-
-    // Act
-    await sut.start();
-    await new Promise(process.nextTick);
-
-    // Assert
-    expect(mockGitEventGitEventTypePushApplicationService.getGitEventType).toBeCalledTimes(1);
-    expect(mockGitEventBusinessRuleIsAllowedGitEventTypeTrueDomainService.isAllowedGitEventType).toBeCalledTimes(1);
-    expect(mockGitPullRequestEventApplicationService.getGitPullRequestEventType).toBeCalledTimes(1);
-    expect(mockGitPullRequestEventBusinessRuleIsAllowedGitPullRequestEventTypeTrueDomainService.isAllowedGitPullRequestEventType).toBeCalledTimes(1);
-    expect(mockGitDefaultBranchNameApplicationService.getGitDefaultBranchName).toBeCalledTimes(1);
-    expect(mockGitSourceBranchNameApplicationService.getGitSourceBranchName).toBeCalledTimes(1);
-    expect(mockGitTargetBranchNameApplicationService.getGitTargetBranchName).toBeCalledTimes(1);
-    expect(mockGitPullRequestBusinessRuleIsAllowedGitPullRequestTrueDomainService.isAllowedGitPullRequest).toBeCalledTimes(1);
-    expect(mockGitAuthenticationApplicationService.getGitAuthentication).toBeCalledTimes(1);
-    expect(mockGitRepositoryApplicationService.getGitRepository).toBeCalledTimes(1);
-    expect(mockGitReleaseBranchBusinessRuleIsGitReleaseSourceBranchTrueDomainService.isGitReleaseSourceBranch).toBeCalledTimes(1);
-    expect(mockGitReleaseBranchBusinessRuleIsGitReleaseSourceBranchTrueDomainService.getGitReleasePreviousTargetBranch).toBeCalledTimes(1);
-    expect(mockGitBranchGetGitBranchComparisonApplicationService.getGitBranchComparison).toBeCalledTimes(2);
-    expect(mockGitBranchComparisonBusinessRuleIsAllowedGitBranchComparisonPreviousBranchComparisonTrueBranchComparisonFalseDomainService.isAllowedGitBranchComparison).toBeCalledTimes(2);
-    expect(mockActionResultApplicationService.setActionResult).toBeCalledTimes(1);
-});
-
 test("start_IsGitReleaseSourceBranchFalse_IsAllowedGitBranchComparisonFalse_ActionResultFalse_Ok", async () => {
     // Arrange
     let sut = new MainApplicationService(

@@ -10,7 +10,8 @@ class GitBranchComparisonBusinessRuleDomainService {
             && developRegex.test(gitBranchComparison.targetBranchName)) {
             return gitBranchComparison.numberOfCommitsAhead == 0;
         }
-        else if (developRegex.test(gitBranchComparison.sourceBranchName)
+        else if ((developRegex.test(gitBranchComparison.sourceBranchName)
+            || releaseRegex.test(gitBranchComparison.sourceBranchName))
             && defaultBranchNameRegex.test(gitBranchComparison.targetBranchName)) {
             return true;
         }

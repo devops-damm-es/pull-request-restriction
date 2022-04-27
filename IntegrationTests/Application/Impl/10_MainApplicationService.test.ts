@@ -84,7 +84,7 @@ beforeEach(() => {
     jest.clearAllMocks();
 });
 
-test("start_IsGitReleaseSourceBranchFalse_IsAllowedGitBranchComparisonFalse_ActionResultFalse_Ok", async () => {
+test("start_IsGitReleaseSourceBranchFalse_GetGitBranchComparisonReject_ActionResultFalse_Ok", async () => {
     // Arrange
 
     // Application
@@ -144,7 +144,7 @@ test("start_IsGitReleaseSourceBranchFalse_IsAllowedGitBranchComparisonFalse_Acti
 
     // Assert
     expect(FakeActionResultWrapperRepositoryService.Success).toBe(false);
-    expect(FakeActionResultWrapperRepositoryService.Message).toBe("Pull request is not allowed: Source branch has commits behind target branch");
+    expect(FakeActionResultWrapperRepositoryService.Message).toBe("Pull request is not allowed: Error when obtain git comparison between source and target branches");
 });
 
 class FakeActionResultWrapperRepositoryService implements IActionResultWrapperRepositoryService {
@@ -171,12 +171,7 @@ class FakeGitBranchWrapperRepositoryService implements IGitBranchWrapperReposito
         gitRepository: GitRepository,
         gitAuthentication: GitAuthentication): Promise<GitBranchComparison | null> {
         return new Promise<GitBranchComparison>(function (resolve, reject) {
-            resolve(new GitBranchComparison(
-                sourceBranchName,
-                targetBranchName,
-                0,
-                1
-            ));
+            reject(null);
         });
     }
 }

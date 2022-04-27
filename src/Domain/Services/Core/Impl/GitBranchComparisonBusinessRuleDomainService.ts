@@ -11,7 +11,8 @@ export class GitBranchComparisonBusinessRuleDomainService implements IGitBranchC
             && developRegex.test(gitBranchComparison.targetBranchName as string)) {
             return gitBranchComparison.numberOfCommitsAhead == 0;
 
-        } else if (developRegex.test(gitBranchComparison.sourceBranchName as string)
+        } else if ((developRegex.test(gitBranchComparison.sourceBranchName as string)
+            || releaseRegex.test(gitBranchComparison.sourceBranchName as string))
             && defaultBranchNameRegex.test(gitBranchComparison.targetBranchName as string)) {
             return true;
 

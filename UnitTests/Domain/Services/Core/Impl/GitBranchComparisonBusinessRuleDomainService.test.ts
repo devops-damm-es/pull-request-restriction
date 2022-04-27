@@ -53,6 +53,22 @@ test("isAllowedGitBranchComparison_DevelopSourceBranch_MasterTargetBranch_Return
   expect(result).toBe(true);
 });
 
+test("isAllowedGitBranchComparison_ReleaseSourceBranch_MasterTargetBranch_ReturnsTrue_Ok", () => {
+  // Arrange
+  var gitBranchComparison = new GitBranchComparison(
+    "release/MyRelease",
+    "main",
+    1,
+    2);
+  let sut = new GitBranchComparisonBusinessRuleDomainService();
+
+  // Act
+  var result = sut.isAllowedGitBranchComparison(gitBranchComparison, "main");
+
+  // Assert
+  expect(result).toBe(true);
+});
+
 test("isAllowedGitBranchComparison_ReturnsTrue_Ok", () => {
   // Arrange
   var gitBranchComparison = new GitBranchComparison(

@@ -84,7 +84,7 @@ beforeEach(() => {
     jest.clearAllMocks();
 });
 
-test("start_IsGitReleaseSourceBranchTrue_GitBranchComparisonPreviousBranchComparisonTrueBranchComparisonFalse_ActionResultFalse_Ok", async () => {
+test("start_IsGitReleaseSourceBranchFalse_IsAllowedGitBranchComparisonFalse_ActionResultFalse_Ok", async () => {
     // Arrange
 
     // Application
@@ -170,25 +170,14 @@ class FakeGitBranchWrapperRepositoryService implements IGitBranchWrapperReposito
         targetBranchName: String,
         gitRepository: GitRepository,
         gitAuthentication: GitAuthentication): Promise<GitBranchComparison | null> {
-        if (targetBranchName == "develop") {
-            return new Promise<GitBranchComparison>(function (resolve, reject) {
-                resolve(new GitBranchComparison(
-                    sourceBranchName,
-                    targetBranchName,
-                    0,
-                    0
-                ));
-            });
-        } else {
-            return new Promise<GitBranchComparison>(function (resolve, reject) {
-                resolve(new GitBranchComparison(
-                    sourceBranchName,
-                    targetBranchName,
-                    0,
-                    1
-                ));
-            });
-        }
+        return new Promise<GitBranchComparison>(function (resolve, reject) {
+            resolve(new GitBranchComparison(
+                sourceBranchName,
+                targetBranchName,
+                0,
+                1
+            ));
+        });
     }
 }
 
@@ -218,12 +207,12 @@ class FakeGitRepositoryWrapperRepositoryService implements IGitRepositoryWrapper
 
 class FakeGitSourceBranchNameWrapperRepositoryService implements IGitSourceBranchNameWrapperRepositoryService {
     getGitSourceBranchName(): String | null {
-        return "release/MyRelease";
+        return "feature/MyFeature";
     }
 }
 
 class FakeGitTargetBranchNameWrapperRepositoryService implements IGitTargetBranchNameWrapperRepositoryService {
     getGitTargetBranchName(): String | null {
-        return "main";
+        return "develop";
     }
 }
